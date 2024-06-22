@@ -10,12 +10,12 @@ const App = () => {
   const datacomment = async (id) => {
     setLoad(true);
     try {
-      const response = await axios.get(
+      const resp = await axios.get(
         `https://jsonplaceholder.typicode.com/posts/${id}/comments`
       );
-      setcomm(response.data);
+      setcomm(resp.data);
     } catch (error) {
-      console.error("Error fetching comments", error);
+      console.error("Error fetching comment", error);
     } finally {
       setLoad(false);
     }
